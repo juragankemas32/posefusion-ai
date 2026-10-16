@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: posefusion-ai
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 240 app:app
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: APP_ACCESS_PIN
+        sync: false

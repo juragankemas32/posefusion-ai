@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0c0b14">
+  <meta name="description" content="PoseFusion AI: transfer identitas dan pose dengan dua foto referensi, kemudian download gambar AI realistis.">
+  <title>PoseFusion AI — Identity & Pose Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="/static/style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="top-aura" aria-hidden="true"></div>
+  <header class="site-header wrap">
+    <a class="brand" href="/" aria-label="PoseFusion beranda">
+      <span class="brand-mark"><svg width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.4 14.7 9.3 21.6 12l-6.9 2.7-2.7 6.9-2.7-6.9L2.4 12l6.9-2.7L12 2.4Z" fill="currentColor"/><path d="m19 2 .8 2.2L22 5l-2.2.8L19 8l-.8-2.2L16 5l2.2-.8L19 2Z" fill="#DACFFF"/></svg></span>
+      <span>pose<span class="brand-bold">fusion</span><span class="brand-dot">.</span></span>
+    </a>
+    <div class="header-right"><span class="header-separator"></span><span class="header-label"><span class="online-dot"></span> AI PHOTO STUDIO</span></div>
+  </header>
+
+  <main class="wrap main-content">
+    <section class="hero" aria-labelledby="main-title">
+      <div class="eyebrow"><span class="eyebrow-icon">✦</span> IDENTITY & POSE TRANSFER <span class="eyebrow-line"></span> STUDIO 01</div>
+      <h1 id="main-title">Wajah kamu.<br><span class="gradient-text">Pose sesukamu.</span></h1>
+      <p class="hero-copy">Gabungkan identitas dari foto pertama dengan pose, gaya, dan suasana foto kedua. Hasilkan foto realistis hanya dengan beberapa klik.</p>
+      <div class="hero-features"><span>✧ Pertahankan wajah</span><i></i><span>✧ Ikuti pose & tatapan</span><i></i><span>✧ Download HD</span></div>
+    </section>
+
+    <div class="workspace">
+      <section class="panel editor-panel" aria-labelledby="editor-heading">
+        <div class="panel-header">
+          <div class="panel-title-wrap"><span class="small-icon"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></span><div><h2 id="editor-heading">Foto referensi</h2><p>Upload 2 gambar untuk memulai</p></div></div>
+          <span class="step-chip">LANGKAH 01 / 02</span>
+        </div>
+
+        <div class="upload-grid">
+          <div class="photo-card" id="identityCard" role="group" aria-label="Upload foto identitas">
+            <div class="photo-card-heading"><span class="number-circle">01</span><div><h3>Foto Identitas</h3><p>Wajah & ciri fisik asli</p></div><span class="role-tag">WAJAH</span></div>
+            <div class="drop-zone" id="identityDrop" tabindex="0" role="button" aria-label="Pilih foto identitas">
+              <input type="file" id="identityInput" hidden accept="image/jpeg,image/png,image/webp">
+              <div class="empty-upload" id="identityEmpty"><div class="upload-symbol"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m3 16 5-5 4 4 3-3 6 6"/></svg></div><strong>Upload foto wajah</strong><span>Ketuk untuk pilih gambar</span><small>JPG, PNG, WEBP • Maks. 15 MB</small></div>
+              <img id="identityPreview" class="upload-preview" alt="Pratinjau foto identitas" hidden>
+              <span class="photo-change" id="identityChange" hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></svg> Ganti foto</span>
+            </div>
+            <div class="selected-info" id="identityInfo" hidden><span class="file-indicator">✓</span><span id="identityName"></span><button class="remove-btn" id="identityRemove" aria-label="Hapus foto identitas" type="button">×</button></div>
+            <p class="card-footnote">Identitas wajah & rambut mengikuti foto ini.</p>
+          </div>
+
+          <div class="photo-card" id="poseCard" role="group" aria-label="Upload foto referensi pose">
+            <div class="photo-card-heading"><span class="number-circle">02</span><div><h3>Foto Pose</h3><p>Pose & suasana tujuan</p></div><span class="role-tag tag-secondary">POSE</span></div>
+            <div class="drop-zone" id="poseDrop" tabindex="0" role="button" aria-label="Pilih foto referensi pose">
+              <input type="file" id="poseInput" hidden accept="image/jpeg,image/png,image/webp">
+              <div class="empty-upload" id="poseEmpty"><div class="upload-symbol"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="m8 21 1.5-5L8 12l-3 2-2-2 5-4 4 2 4-2 5 3-1 2-5-2-1 5 2 5"/></svg></div><strong>Upload foto pose</strong><span>Ketuk untuk pilih gambar</span><small>JPG, PNG, WEBP • Maks. 15 MB</small></div>
+              <img id="posePreview" class="upload-preview" alt="Pratinjau foto referensi pose" hidden>
+              <span class="photo-change" id="poseChange" hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></svg> Ganti foto</span>
+            </div>
+            <div class="selected-info" id="poseInfo" hidden><span class="file-indicator">✓</span><span id="poseName"></span><button class="remove-btn" id="poseRemove" aria-label="Hapus foto pose" type="button">×</button></div>
+            <p class="card-footnote">Pose, sudut kepala, tatapan & latar mengikuti foto ini.</p>
+          </div>
+        </div>
+
+        <div class="settings-head"><h3>Pengaturan hasil</h3><span class="optional-label">OPSIONAL</span></div>
+        <div class="settings-group"><label class="setting-label" for="aspect">Rasio gambar</label><div class="aspect-options" id="aspectOptions" role="radiogroup" aria-label="Rasio gambar">
+          <label class="aspect-option active"><input type="radio" name="aspect" value="auto" checked><svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3m8 0h3a2 2 0 0 0 2-2v-3"/></svg> Otomatis</label>
+          <label class="aspect-option"><input type="radio" name="aspect" value="portrait"><svg width="16" height="17" fill="none" viewBox="0 0 20 24" stroke="currentColor" stroke-width="1.7"><rect x="4" y="1.5" width="12" height="21" rx="2"/></svg> Portrait</label>
+          <label class="aspect-option"><input type="radio" name="aspect" value="landscape"><svg width="17" height="17" fill="none" viewBox="0 0 24 20" stroke="currentColor" stroke-width="1.7"><rect x="1" y="4" width="22" height="12" rx="2"/></svg> Landscape</label>
+          <label class="aspect-option"><input type="radio" name="aspect" value="square"><svg width="16" height="16" fill="none" viewBox="0 0 20 20" stroke="currentColor" stroke-width="1.7"><rect x="2" y="2" width="16" height="16" rx="2"/></svg> Square</label>
+        </div></div>
+        <div class="settings-group extra-group"><label class="setting-label" for="notes">Catatan tambahan <span>(jika diperlukan)</span></label><textarea id="notes" maxlength="700" rows="2" placeholder="Contoh: ekspresi senyum tipis, pencahayaan natural, warna lembut..."></textarea><div class="field-hint"><span>Instruksi utama identitas & pose sudah otomatis.</span><span id="charCounter">0 / 700</span></div></div>
+        <div class="pin-area" id="pinArea" hidden><label class="setting-label" for="accessPin">PIN akses website</label><input type="password" id="accessPin" autocomplete="off" placeholder="Masukkan PIN privat untuk generate"><p>PIN hanya dikirim saat generate, tidak disimpan di browser.</p></div>
+        <div class="server-status" id="serverStatus" role="status"><span class="status-light"></span><span id="statusText">Memeriksa koneksi AI...</span></div>
+        <button type="button" id="generateBtn" class="generate-button" disabled><span class="button-spark">✦</span><span id="generateText">Generate Gambar</span><span class="button-arrow" id="buttonArrow">↗</span><span class="loading-spinner" id="buttonSpinner" hidden></span></button>
+        <p class="generate-note"><svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none"><path d="M12 2 3.5 5v6c0 5.5 3.6 9.2 8.5 11 4.9-1.8 8.5-5.5 8.5-11V5L12 2Z"/><path d="m8.5 12 2.5 2.5 4.8-5"/></svg> Hasil AI bisa bervariasi. Setiap generate menggunakan kredit API.</p>
+        <div id="errorBox" class="error-box" role="alert" hidden></div>
+      </section>
+
+      <section class="panel result-panel" aria-labelledby="result-heading">
+        <div class="panel-header result-header"><div class="panel-title-wrap"><span class="small-icon small-icon-purple"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 2 2.7 7.3L22 12l-7.3 2.7L12 22l-2.7-7.3L2 12l7.3-2.7L12 2Z"/></svg></span><div><h2 id="result-heading">Hasil gambar</h2><p>Foto hasil AI akan muncul di sini</p></div></div><span class="result-state" id="resultState">BELUM ADA HASIL</span></div>
+        <div class="result-canvas" id="resultCanvas">
+          <div class="result-placeholder" id="resultPlaceholder"><div class="placeholder-art"><div class="placeholder-photo photo-back"></div><div class="placeholder-photo photo-front"><svg width="78" height="78" viewBox="0 0 78 78" fill="none"><circle cx="39" cy="25" r="11" fill="currentColor" fill-opacity=".2"/><path d="M17 66c2.7-16 10-24 22-24s19.3 8 22 24" stroke="currentColor" stroke-opacity=".35" stroke-width="7" stroke-linecap="round"/><path d="m60 6 2.4 6.6L69 15l-6.6 2.4L60 24l-2.4-6.6L51 15l6.6-2.4L60 6Z" fill="#A88BFF"/></svg></div><span class="orb orb-one"></span><span class="orb orb-two"></span></div><h3>Kreasimu dimulai di sini</h3><p>Upload dua foto lalu tekan <b>Generate Gambar</b> untuk melihat hasil transformasinya.</p></div>
+          <div class="result-loading" id="resultLoading" hidden><div class="generation-glow"><div class="loading-orbit"></div><span>✦</span></div><h3>Sedang menciptakan foto...</h3><p>AI sedang menyesuaikan identitas, sudut kepala, tatapan, dan pose.</p><div class="moving-track"><span></span></div><small>Jangan tutup halaman sampai hasil muncul.</small></div>
+          <img id="resultImage" alt="Hasil transfer identitas dan pose oleh AI" hidden>
+        </div>
+        <div class="result-actions" id="resultActions" hidden><button id="downloadBtn" class="download-button" type="button"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></svg> Download PNG</button><button class="retry-button" id="retryBtn" type="button" title="Generate ulang"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M5 9a8 8 0 0 1 14-2l1 1M4 16l1 1a8 8 0 0 0 14-2"/></svg></button></div>
+        <div class="output-footnote"><span><i class="quality-dot"></i> HIGH QUALITY OUTPUT</span><span>PNG • DOWNLOAD READY</span></div>
+      </section>
+    </div>
+    <div class="bottom-notice"><span>✦</span> Fotomu diproses untuk generate, tidak disimpan permanen di server website. Pastikan kamu memiliki izin untuk menggunakan foto tersebut.</div>
+  </main>
+  <footer class="site-footer wrap"><span>© PoseFusion AI</span><span>CREATE BEYOND THE FRAME <span class="footer-star">✦</span></span></footer>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
